@@ -3,6 +3,7 @@ public class Main {
         task1();
         task2();
         task3();
+        task4();
     }
 
     public static int[] generateRandomArray() {
@@ -42,8 +43,21 @@ public class Main {
     public static void task3() {
         System.out.println("Задача 3");
         int[] arr = generateRandomArray();
+        int allDay = 30;
+        float sumExpenses = 0;
+        float averageSumExpenses = 0f;
         for (int day = 1; day <= 30; day++) {
+            sumExpenses += arr[day];
+            averageSumExpenses = sumExpenses / allDay;
+        }
+        System.out.println("Средняя сумма трат за месяц составила " + averageSumExpenses + " рублей");
+    }
 
+    public static void task4() {
+        System.out.println("Задача 4");
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int index = 10; index >= 0; index--) {
+            System.out.print(reverseFullName[index]);
         }
     }
 }
