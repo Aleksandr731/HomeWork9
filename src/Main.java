@@ -19,8 +19,8 @@ public class Main {
         System.out.println("Задача 1");
         int[] arr = generateRandomArray();
         int allSalary = 0;
-        for (int day = 1; day <= 30; day++) {
-            allSalary += arr[day];
+        for (int salary : arr) {
+            allSalary += salary;
         }
         System.out.println("Сумма выплат за месяц " + allSalary + " рублей");
     }
