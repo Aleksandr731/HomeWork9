@@ -18,9 +18,11 @@ public class Main {
     public static void task1() {
         System.out.println("Задача 1");
         int[] arr = generateRandomArray();
-        for (int mouth = 1; mouth <= 12; mouth++) {
-            System.out.println("Сумма трат за " + mouth + " месяц " + arr[mouth] + " рублей");
+        int allSalary = 0;
+        for (int day = 1; day <= 30; day++) {
+            allSalary += arr[day];
         }
+        System.out.println("Сумма выплат за месяц " + allSalary + " рублей");
     }
 
     public static void task2() {
@@ -28,7 +30,7 @@ public class Main {
         int[] arr = generateRandomArray();
         int minExpenses = 100_000;
         int maxExpenses = 100_000;
-        for (int day = 1; day <= 31; day++) {
+        for (int day = 0; day <= 30; day++) {
             if (arr[day] > maxExpenses) {
                 maxExpenses = arr[day];
             }
@@ -44,19 +46,19 @@ public class Main {
         System.out.println("Задача 3");
         int[] arr = generateRandomArray();
         int allDay = 30;
-        float sumExpenses = 0;
         float averageSumExpenses = 0f;
-        for (int day = 1; day <= 30; day++) {
-            sumExpenses += arr[day];
-            averageSumExpenses = sumExpenses / allDay;
+        float salarySum = 0f;
+        for (int salary : arr) {
+            salarySum += salary;
         }
+        averageSumExpenses = salarySum / allDay;
         System.out.println("Средняя сумма трат за месяц составила " + averageSumExpenses + " рублей");
     }
 
     public static void task4() {
         System.out.println("Задача 4");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int index = 10; index >= 0; index--) {
+        for (int index = reverseFullName.length - 1; index >= 0; index--) {
             System.out.print(reverseFullName[index]);
         }
     }
